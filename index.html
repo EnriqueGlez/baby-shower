@@ -82,7 +82,7 @@
   max-width:750px;
 
   background-image:url("assets/invitacion.jpeg");
-  background-size:cover;
+  background-size:contain;
   background-position:center;
   background-repeat:no-repeat;
 
@@ -92,7 +92,6 @@
   overflow:hidden;
 
   min-height:1200px;
-  aspect-ratio:3/4;
 
   box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
@@ -427,9 +426,8 @@
       }
 
       .invitation {
-        min-height: auto;
-        aspect-ratio: 3/4;
-        margin-bottom:20px;
+        min-height: 800px;
+        background-size: contain;
       }
 
       .baby {
@@ -543,7 +541,8 @@
       }
 
       .invitation {
-        aspect-ratio: 3/4;
+        min-height: 600px;
+        background-size: contain;
       }
 
       .baby {
