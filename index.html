@@ -372,32 +372,104 @@
 
     /* RESPONSIVE */
 
-    @media(max-width:768px){
+    @media (max-width: 992px) {
 
-      .invitation{
-        padding:35px 20px 320px;
+      .container {
+        padding: 35px 18px 70px;
       }
 
-      .baby{
-        font-size:60px;
+      .countdown-container,
+      .card {
+        width: 100%;
       }
 
-      .shower{
-        font-size:70px;
+      .map iframe {
+        height: 220px;
       }
 
-      .parents{
-        font-size:42px;
+      .gift-buttons {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .dog{
-        width:240px;
-        right:50%;
-        transform:translateX(50%);
+      .gift {
+        width: 100%;
+        max-width: 100%;
       }
 
-      .card{
-        padding:25px;
+      .gift img {
+        width: 120px;
+        height: 55px;
+      }
+
+      .footer {
+        font-size: 48px;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+
+      .container {
+        padding: 28px 14px 55px;
+      }
+
+      .invitation {
+        min-height: 860px;
+        padding: 30px 16px 280px;
+      }
+
+      .baby {
+        font-size: 52px;
+      }
+
+      .shower {
+        font-size: 62px;
+      }
+
+      .parents {
+        font-size: 36px;
+      }
+
+      .dog {
+        width: 220px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 22px;
+      }
+
+      .card h2 {
+        font-size: 30px;
+      }
+
+      .card p {
+        font-size: 16px;
+      }
+
+      .countdown-title {
+        font-size: 26px;
+      }
+
+      .time {
+        min-width: 100px;
+        padding: 16px;
+      }
+
+      .time h2 {
+        font-size: 34px;
+      }
+
+      .gift-buttons {
+        gap: 16px;
+      }
+
+      .gifts {
+        width: 24px;
       }
 
     }
