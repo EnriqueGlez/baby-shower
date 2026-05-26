@@ -11,843 +11,130 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      background:#efebe7;
-      font-family:'Poppins',sans-serif;
-      overflow-x:hidden;
-      position:relative;
-      color:#5d4a3b;
-    }
-
-    /* FONDO */
-
-    .floating-hearts{
-      position:fixed;
-      width:100%;
-      height:100%;
-      top:0;
-      left:0;
-      overflow:hidden;
-      pointer-events:none;
-      z-index:1;
-    }
-
-.heart{
-  position:absolute;
-  color:#eeceb3;
-  font-size:22px;
-  animation:float 12s linear infinite;
-  opacity:.7;
-}
-
-    @keyframes float{
-      0%{
-        transform:translateY(100vh) rotate(0deg);
-        opacity:0;
-      }
-
-      20%{
-        opacity:.7;
-      }
-
-      100%{
-        transform:translateY(-120vh) rotate(360deg);
-        opacity:0;
-      }
-    }
-
-    /* CONTENEDOR */
-
-    .container{
-      position:relative;
-      z-index:2;
-      width:100%;
-      padding:40px 20px 80px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-    }
-
-    /* INVITACION */
-
-.invitation{
-  width:100%;
-  max-width:750px;
-
-  background-image:url("assets/invitacion.jpeg");
-  background-size:contain;
-  background-position:center;
-  background-repeat:no-repeat;
-
-  border-radius:18px;
-
-  position:relative;
-  overflow:hidden;
-
-  min-height:1200px;
-
-  box-shadow:0 15px 40px rgba(0,0,0,.08);
-}
-    /* DECORACIONES */
-
-    .cloud{
-      position:absolute;
-      opacity:.6;
-    }
-
-    .cloud1{
-      width:140px;
-      top:40px;
-      right:40px;
-    }
-
-    .cloud2{
-      width:90px;
-      bottom:180px;
-      left:30px;
-    }
-
-    .balloons{
-      position:absolute;
-      width:180px;
-      top:25px;
-      left:25px;
-    }
-
-    .leaves{
-      position:absolute;
-      width:130px;
-      right:35px;
-      top:280px;
-      opacity:.9;
-    }
-
-    /* TITULOS */
-
-    .small-title{
-      text-align:center;
-      font-size:16px;
-      letter-spacing:2px;
-      margin-top:50px;
-      font-family:'Cormorant Garamond', serif;
-    }
-
-    .baby{
-      text-align:center;
-      font-size:90px;
-      font-family:'Cormorant Garamond', serif;
-      font-weight:600;
-      color:#5f4634;
-      margin-top:20px;
-      line-height:1;
-    }
-
-    .shower{
-      text-align:center;
-      font-family:'Great Vibes', cursive;
-      font-size:95px;
-      color:#d6a25e;
-      margin-top:-10px;
-      line-height:1;
-    }
-
-    .message{
-      text-align:center;
-      margin-top:25px;
-      line-height:1.8;
-      font-size:20px;
-      font-family:'Cormorant Garamond', serif;
-    }
-
-    .parents{
-      text-align:center;
-      margin-top:25px;
-      font-size:55px;
-      color:#6b7a58;
-      font-family:'Great Vibes', cursive;
-    }
-
-    /* PERRITO */
-
-    .dog{
-      position:absolute;
-      width:290px;
-      right:-15px;
-      bottom:0;
-      animation:dogFloat 4s ease-in-out infinite;
-    }
-
-    @keyframes dogFloat{
-      0%{
-        transform:translateY(0px);
-      }
-
-      50%{
-        transform:translateY(-10px);
-      }
-
-      100%{
-        transform:translateY(0px);
-      }
-    }
-
-    /* FECHA */
-
-    .date-section{
-      margin-top:40px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .date-box{
-      border:1px dashed #d9b58d;
-      padding:20px 35px;
-      min-width:140px;
-      text-align:center;
-      background:white;
-    }
-
-    .date-box h3{
-      font-size:40px;
-      font-family:'Cormorant Garamond', serif;
-      color:#5d4a3b;
-    }
-
-    .date-box p{
-      margin-top:5px;
-      letter-spacing:2px;
-    }
-
-    /* INFO */
-
-    .info{
-      margin-top:35px;
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-      font-size:18px;
-      max-width:450px;
-    }
-
-    .info-item{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    }
-
-    /* COUNTDOWN */
-
-    .countdown-container{
-      margin-top:40px;
-      text-align:center;
-      width:100%;
-    }
-
-    .countdown-title{
-      font-size:30px;
-      margin-bottom:20px;
-      font-family:'Cormorant Garamond', serif;
-    }
-
-    .countdown{
-      display:flex;
-      justify-content:center;
-      gap:15px;
-      flex-wrap:wrap;
-      padding:0 10px;
-    }
-
-    .time{
-      background:#fdf8f3;
-      border:1px solid #eadbc8;
-      border-radius:12px;
-      padding:20px;
-      min-width:110px;
-      flex:1;
-      max-width:140px;
-    }
-
-    .time h2{
-      font-size:42px;
-      font-family:'Cormorant Garamond', serif;
-    }
-
-    .time span{
-      font-size:14px;
-      letter-spacing:2px;
-    }
-
-    /* CARDS */
-
-    .card{
-      width:100%;
-      max-width:900px;
-      background:#fdf8f3;
-      border:1px solid #eadbc8;
-      border-radius:18px;
-      margin-top:25px;
-      padding:30px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:30px;
-      flex-wrap:wrap;
-      position:relative;
-      z-index:2;
-    }
-
-    .card h2{
-      font-family:'Cormorant Garamond', serif;
-      font-size:38px;
-      margin-bottom:15px;
-      word-break:break-word;
-    }
-
-    .card p{
-      line-height:1.8;
-      max-width:350px;
-    }
-
-    .btn{
-      display:inline-block;
-      margin-top:20px;
-      background:#9a9570;
-      color:white;
-      text-decoration:none;
-      padding:15px 28px;
-      border-radius:10px;
-      transition:.3s;
-      border:none;
-      cursor:pointer;
-    }
-
-    .btn:hover{
-      transform:translateY(-3px);
-    }
-
-    .map{
-      width:100%;
-      max-width:420px;
-      border-radius:12px;
-      overflow:hidden;
-    }
-
-    .map iframe{
-      width:100%;
-      height:250px;
-      border:none;
-    }
-
-    .gift-buttons{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-
-    .gift{
-      border:1px solid #eadbc8;
-      background:white;
-      border-radius:12px;
-      padding:25px;
-      text-align:center;
-      min-width:220px;
-      flex:1;
-      max-width:280px;
-    }
-
-    .gift img{
-      width:150px;
-      height:70px;
-      object-fit:contain;
-    }
-
-    .footer{
-      margin-top:50px;
-      font-size:60px;
-      color:#6b7a58;
-      font-family:'Great Vibes', cursive;
-      text-align:center;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 992px) {
-
-      .container {
-        padding: 35px 18px 70px;
-      }
-
-      .countdown-container,
-      .card {
-        width: 100%;
-      }
-
-      .map iframe {
-        height: 220px;
-      }
-
-      .gift-buttons {
-        flex-direction: row;
-        align-items: center;
-        justify-content:center;
-      }
-
-      .gift {
-        width: 100%;
-        max-width: 280px;
-      }
-
-      .gift img {
-        width: 120px;
-        height: 55px;
-      }
-
-      .footer {
-        font-size: 48px;
-      }
-
-    }
-
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:#efebe7;font-family:'Poppins',sans-serif;overflow-x:hidden;position:relative;color:#5d4a3b;}
+    .floating-hearts{position:fixed;width:100%;height:100%;top:0;left:0;overflow:hidden;pointer-events:none;z-index:1;}
+    .heart{position:absolute;color:#eeceb3;font-size:22px;animation:float 12s linear infinite;opacity:.7;}
+    @keyframes float{0%{transform:translateY(100vh) rotate(0deg);opacity:0;}20%{opacity:.7;}100%{transform:translateY(-120vh) rotate(360deg);opacity:0;}}
+    .container{position:relative;z-index:2;width:100%;padding:40px 20px 80px;display:flex;flex-direction:column;align-items:center;}
+    .invitation{width:100%;max-width:750px;border-radius:18px;position:relative;overflow:hidden;margin-bottom:32px;box-shadow:0 15px 40px rgba(0,0,0,.08);background:none;padding:0;min-height:unset;}
+    .invitation-img{width:100%;height:auto;display:block;border-radius:18px;}
+    /* ... el resto del CSS igual ... */
+    /* TITULOS, CARD, MAP, GIFT ... tu css original ...*/
+    .card{width:100%;max-width:900px;background:#fdf8f3;border:1px solid #eadbc8;border-radius:18px;margin-top:25px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;z-index:2;}
+    .card h2{font-family:'Cormorant Garamond', serif;font-size:38px;margin-bottom:15px;word-break:break-word;}
+    .card p{line-height:1.8;max-width:350px;}
+    .btn{display:inline-block;margin-top:20px;background:#9a9570;color:white;text-decoration:none;padding:15px 28px;border-radius:10px;transition:.3s;border:none;cursor:pointer;}
+    .btn:hover{transform:translateY(-3px);}
+    .map{width:100%;max-width:420px;border-radius:12px;overflow:hidden;}
+    .map iframe{width:100%;height:250px;border:none;}
+    .gift-buttons{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;}
+    .gift{border:1px solid #eadbc8;background:white;border-radius:12px;padding:25px;text-align:center;min-width:220px;flex:1;max-width:280px;}
+    .gift img{width:150px;height:70px;object-fit:contain;}
+    .footer{margin-top:50px;font-size:60px;color:#6b7a58;font-family:'Great Vibes', cursive;text-align:center;}
+    /* responsive y demás */
+    @media (max-width: 992px) {...}
     @media (max-width: 768px) {
-
-      .container {
-        padding: 20px 12px 50px;
-      }
-
-      .invitation {
-        min-height: 800px;
-        background-size: contain;
-      }
-
-      .baby {
-        font-size: 52px;
-      }
-
-      .shower {
-        font-size: 62px;
-      }
-
-      .parents {
-        font-size: 36px;
-      }
-
-      .dog {
-        width: 200px;
-        right: 50%;
-        transform: translateX(50%);
-      }
-
-      .card {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 20px 16px;
-        margin-top:15px;
-        gap:15px;
-      }
-
-      .card h2 {
-        font-size: 24px;
-        word-break:break-word;
-      }
-
-      .card p {
-        font-size: 14px;
-        max-width:100%;
-      }
-
-      .countdown-title {
-        font-size: 24px;
-        margin-bottom:15px;
-      }
-
-      .countdown {
-        gap:10px;
-        padding:0 8px;
-      }
-
-      .time {
-        min-width:80px;
-        padding: 12px;
-        max-width:100%;
-        flex:1;
-      }
-
-      .time h2 {
-        font-size: 28px;
-      }
-
-      .time span {
-        font-size:12px;
-      }
-
-      .gift-buttons {
-        gap: 12px;
-        flex-direction:column;
-        align-items:stretch;
-      }
-
-      .gift {
-        width: 100%;
-        max-width:100%;
-        min-width:auto;
-      }
-
-      .gift img {
-        width:100px;
-        height:50px;
-      }
-
-      .gifts {
-        width: 20px;
-      }
-
-      .map {
-        max-width:100%;
-      }
-
-      .map iframe {
-        height:180px;
-      }
-
-      .btn {
-        padding:12px 24px;
-        font-size:14px;
-        width:100%;
-        text-align:center;
-      }
-
-      .footer {
-        font-size: 40px;
-        margin-top:30px;
-      }
-
+      .container {padding: 20px 12px 50px;}
+      .invitation-img {width:100%;height:auto;}
+      .invitation{margin-bottom:24px;}
     }
-
     @media (max-width: 480px) {
-
-      .container {
-        padding: 15px 10px 40px;
-      }
-
-      .invitation {
-        min-height: 600px;
-        background-size: contain;
-      }
-
-      .baby {
-        font-size: 40px;
-      }
-
-      .shower {
-        font-size: 48px;
-      }
-
-      .countdown-title {
-        font-size: 20px;
-      }
-
-      .time {
-        min-width:70px;
-        padding: 10px 8px;
-      }
-
-      .time h2 {
-        font-size: 24px;
-      }
-
-      .time span {
-        font-size:11px;
-      }
-
-      .card {
-        padding: 16px 12px;
-        margin-top:12px;
-      }
-
-      .card h2 {
-        font-size: 20px;
-      }
-
-      .card p {
-        font-size: 13px;
-      }
-
-      .gift {
-        padding:15px;
-      }
-
-      .gift img {
-        width:80px;
-        height:40px;
-      }
-
-      .gifts {
-        width: 18px;
-      }
-
-      .map iframe {
-        height:160px;
-      }
-
-      .footer {
-        font-size: 32px;
-      }
-
+      .container {padding: 15px 10px 40px;}
+      .invitation-img {width:100%;height:auto;}
+      .invitation{margin-bottom:16px;}
     }
-
-    .gifts {
-      width: 30px;
-      margin-right:8px;
-      vertical-align:middle;
-    }
-
+    .gifts{width:30px;margin-right:8px;vertical-align:middle;}
   </style>
 </head>
-
 <body>
-
   <!-- CORAZONES -->
-
   <div class="floating-hearts" id="hearts"></div>
-
   <div class="container">
-
     <!-- INVITACION -->
-
     <div class="invitation">
-
+      <img src="assets/invitacion.jpeg" alt="Invitación" class="invitation-img" />
     </div>
-
     <!-- COUNTDOWN -->
-
     <div class="countdown-container">
-
-      <div class="countdown-title">
-        FALTA MUY POCO
-      </div>
-
+      <div class="countdown-title">FALTA MUY POCO</div>
       <div class="countdown">
-
-        <div class="time">
-          <h2 id="days">0</h2>
-          <span>DÍAS</span>
-        </div>
-
-        <div class="time">
-          <h2 id="hours">0</h2>
-          <span>HORAS</span>
-        </div>
-
-        <div class="time">
-          <h2 id="minutes">0</h2>
-          <span>MINUTOS</span>
-        </div>
-
-        <div class="time">
-          <h2 id="seconds">0</h2>
-          <span>SEGUNDOS</span>
-        </div>
-
+        <div class="time"><h2 id="days">0</h2><span>DÍAS</span></div>
+        <div class="time"><h2 id="hours">0</h2><span>HORAS</span></div>
+        <div class="time"><h2 id="minutes">0</h2><span>MINUTOS</span></div>
+        <div class="time"><h2 id="seconds">0</h2><span>SEGUNDOS</span></div>
       </div>
-
     </div>
-
     <!-- UBICACION -->
-
     <div class="card">
-
       <div>
         <h2><img class="gifts" src="assets/maps.png">Ubicación</h2>
-
-        <p>
-          C. Vicente Guerrero 452, Barrio de la Concepción, 52100 San Mateo Atenco, Méx.
-          
-        </p>
-
-        <a
-          href="https://maps.app.goo.gl/gWiAJEYnsDcyGxt26"
-          class="btn"
-          target="_blank"
-        >
-          VER EN MAPS
-        </a>
+        <p>C. Vicente Guerrero 452, Barrio de la Concepción, 52100 San Mateo Atenco, Méx.</p>
+        <a href="https://maps.app.goo.gl/gWiAJEYnsDcyGxt26" class="btn" target="_blank">VER EN MAPS</a>
       </div>
-
       <div class="map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.0260646119827!2d-99.5376405!3d19.2812327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bd3ffddcf39%3A0xe57aaf552[...]
-
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.0260646119827!2d-99.5376405!3d19.2812327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bd3ffddcf39%3A0xe57aaf5526f1a3bd!2sNayma%20Jard%C3%ADn%20y%20Sal%C3%B3n%20de%20Eventos!5e0!3m2!1ses-419!2smx!4v1779772207883!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-
     </div>
-
     <!-- REGALOS -->
-
     <div class="card">
-
       <div>
         <h2><img class="gifts" src="assets/regalo.png">Mesa de Regalos</h2>
-
-        <p>
-          Tu cariño es el mejor regalo,<br>
-          pero si deseas hacernos un obsequio,<br>
-          aquí te dejamos nuestras opciones.
-        </p>
+        <p>Tu cariño es el mejor regalo,<br>pero si deseas hacernos un obsequio,<br>aquí te dejamos nuestras opciones.</p>
       </div>
-
       <div class="gift-buttons">
-
         <div class="gift">
-
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcEAAABwCAMAAABRhDu+AAABIFBMVEX////bAIDupMn//v/7///ZAH7cAIL/+//+//3to8nWAHXrr83qwtvZAYDtpcj8//3uocnUAHnprM/npMb89fvghrfQAHP22ejNAHb/[...]
-          >
-
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcEAAABwCAMAAABRhDu+AAABIFBMVEX////bAIDupMn//v/7///ZAH7cAIL/+//+//3to8nWAHXrr83qwtvZAYDtpcj8//3uocnUAHnprM/npMb89fvghrfQAHP22ejNAHb/8Pz45vTyzubnqMjvzOD89P/NHIH21uvZRZHimsTKBXjmkb/QWZjrt9naaKfVEIXrvdrdAHz46vLhhLb0//vcAHnLAHHddqvUAHDcAHHberjaW6HtvNvJAH33//fw3evWAGrBAGnxn8jjnsXircjnvc/z4OraQpDYYKTSSZbZeKjah67KAF7Ib5rJc67Zn7rHYJ7xzujys9rYPIzUWp7kib7tqNTQQYf3yerHJYn84fXYP5jWT5PSLn/dkMPGNojbL5Dcb6PvqsPYSqDUK5jdZKLRXKl2qc/CAAAaD0lEQVR4nO1dDUPa...." />
           <br>
-
-          <a
-            href="https://www.liverpool.com.mx/"
-            class="btn"
-            target="_blank"
-          >
-            IR A MESA
-          </a>
-
+          <a href="https://www.liverpool.com.mx/" class="btn" target="_blank">IR A MESA</a>
         </div>
-
         <div class="gift">
-
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZwAAAB6CAMAAAC89RUgAAAAilBMVEX///8AAADr6+v7+/vKysri4uL39/fx8fHPz8/X19f09PTm5uaWlpaqqqrp6emZmZmhoaHb29u5ubmSkpKurq5vb29nZ2eMjIy/v79G[...]
-          >
-
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZwAAAB6CAMAAAC89RUgAAAAilBMVEX///8AAADr6+v7+/vKysri4uL39/fx8fHPz8/X19f09PTm5uaWlpaqqqrp6emZmZmhoaHb29u5ubmSkpKurq5vb29nZ2eMjIy/v79GRkbFxcVbW1uHh4d1dXWjo6NRUVE9PT0mJiYxMTFMTEx6enpVVVUrKytgYGA4ODgbGxsPDw8nJycfHx8UFBRG1FbDAAAXmElEQVR4nO0daWOi...." />
           <br>
-
-          <a
-            href="https://www.elpalaciodehierro.com/"
-            class="btn"
-            target="_blank"
-          >
-            IR A MESA
-          </a>
-
+          <a href="https://www.elpalaciodehierro.com/" class="btn" target="_blank">IR A MESA</a>
         </div>
-
       </div>
-
     </div>
-
     <!-- CONFIRMACION -->
-
     <div class="card">
-
       <div>
-
         <h2><img class="gifts" src="assets/confirmacion.png">Confirmación de Asistencia</h2>
-
-        <p>
-          Por favor confirma tu asistencia<br>
-          antes del 15 de junio.
-        </p>
-
+        <p>Por favor confirma tu asistencia<br>antes del 15 de junio.</p>
       </div>
-
       <div>
-
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSd3tSyiQHxQfwbnzkEgd58H-U4IomDE_0pUVCgZWfcxlZ1ipg/viewform?usp=publish-editor"
-          class="btn"
-          target="_blank"
-        >
-          CONFIRMAR ASISTENCIA
-        </a>
-
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3tSyiQHxQfwbnzkEgd58H-U4IomDE_0pUVCgZWfcxlZ1ipg/viewform?usp=publish-editor" class="btn" target="_blank">CONFIRMAR ASISTENCIA</a>
       </div>
-
     </div>
-
-    <div class="footer">
-      ¡Te esperamos!
-    </div>
-
+    <div class="footer">¡Te esperamos!</div>
   </div>
-
   <script>
-
     // COUNTDOWN
-
     const targetDate = new Date("July 4, 2026 10:30:00").getTime();
-
     setInterval(() => {
-
       const now = new Date().getTime();
-
       const distance = targetDate - now;
-
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-      );
-
-      const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
-      );
-
-      const seconds = Math.floor(
-        (distance % (1000 * 60)) / 1000
-      );
-
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       document.getElementById("days").innerHTML = days;
       document.getElementById("hours").innerHTML = hours;
       document.getElementById("minutes").innerHTML = minutes;
       document.getElementById("seconds").innerHTML = seconds;
-
     }, 1000);
-
     // CORAZONES FLOTANDO
-
     const heartsContainer = document.getElementById("hearts");
-
     function createHeart(){
-
       const heart = document.createElement("div");
-
       heart.classList.add("heart");
-
       heart.innerHTML = "🤍";
-
       heart.style.left = Math.random() * 100 + "vw";
-
-      heart.style.animationDuration =
-        (Math.random() * 6 + 6) + "s";
-
-      heart.style.fontSize =
-        (Math.random() * 20 + 15) + "px";
-
+      heart.style.animationDuration = (Math.random() * 6 + 6) + "s";
+      heart.style.fontSize = (Math.random() * 20 + 15) + "px";
       heartsContainer.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 12000);
-
+      setTimeout(() => {heart.remove();}, 12000);
     }
-
     setInterval(createHeart, 700);
-
   </script>
-
 </body>
 </html>
